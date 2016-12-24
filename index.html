@@ -51,9 +51,14 @@
       left: 100%;
       top: 0;
     }
+    .switch {
+      margin-bottom: 50px;
+      display: block;
+    }
   </style>
 </head>
 <body>
+  <button class="switch">turn to column dropdown</button>
   <nav class="dropdown">
     <ul>
       <li><a href="#">1级菜单</a></li>
@@ -89,5 +94,19 @@
       </li>
     </ul>
   </nav>
+
+  <script>
+    var switchBtn = document.getElementsByClassName('switch')[0];
+    var dropdown = document.getElementsByClassName('dropdown')[0];
+    switchBtn.onclick = function () {
+      if (switchBtn.innerHTML === 'turn to column dropdown') {
+        dropdown.className += ' vertical';
+        switchBtn.innerHTML = 'turn to row dropdown';
+      } else {
+        dropdown.className = 'dropdown';
+        switchBtn.innerHTML = 'turn to column dropdown';
+      }
+    }
+  </script>
 </body>
 </html>
